@@ -2,7 +2,7 @@ import { Menu as HeadlessMenu, Transition } from '@headlessui/react';
 import * as React from 'react';
 
 import { CloseIcon, MenuIcon } from '@/components/icons';
-import { MENU_CONFIG } from '@/configs/menu';
+import { MENU_CONFIG } from '@/configs/menu.config';
 
 import { MenuItem } from './menu-item';
 
