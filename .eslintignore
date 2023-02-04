@@ -4,3 +4,5 @@ public/
 
 *.d.ts
 *.lock
+postcss.config.js
+tailwind.config.js

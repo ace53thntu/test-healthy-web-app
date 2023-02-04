@@ -1,3 +1,9 @@
+/**
+ * Fonts used in project
+ */
+import '@fontsource/inter';
+import '@fontsource/noto-sans-jp';
+// global css
 import './index.css';
 
 import React from 'react';
