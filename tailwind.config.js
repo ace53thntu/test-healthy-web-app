@@ -25,6 +25,8 @@ module.exports = {
         'gradient-yellowred':
           'linear-gradient(180deg, #FFCC21 0%, #FF963C 100%)',
         'achievement-bg': 'linear-gradient(225deg, #FFCC21 0%, #FF963C 100%)',
+        'btn-gradient':
+          'linear-gradient(32.95deg, #FFCC21 8.75%, #FF963C 86.64%)',
       },
     },
     screens: {
@@ -32,5 +34,5 @@ module.exports = {
       lg: '1280px',
     },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/line-clamp')],
 };

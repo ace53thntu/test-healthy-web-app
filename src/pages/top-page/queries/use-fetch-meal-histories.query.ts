@@ -1,9 +1,9 @@
 import { useInfiniteQuery } from 'react-query';
 
+import { QUERY_KEYS } from '@/configs/query-key';
 import { delay, fakePagination } from '@/utils';
 
 import { MEAL_HISTORIES } from '../data';
-import { QUERY_KEYS } from './constants';
 import { IMealCategoryResponse } from './use-fetch-meal-categories.query';
 
 export interface IMealHistoryResponse {

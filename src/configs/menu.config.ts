@@ -1,5 +1,7 @@
 import { ROUTE_PATHS } from './routes.config';
 
+export const NAVBAR_HEIGHT = 64;
+
 export const MENU_CONFIG = [
   {
     href: ROUTE_PATHS.MY_RECORDS,

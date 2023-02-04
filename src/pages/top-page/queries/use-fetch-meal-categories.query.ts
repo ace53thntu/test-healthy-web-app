@@ -1,9 +1,9 @@
 import { useQuery } from 'react-query';
 
+import { QUERY_KEYS } from '@/configs/query-key';
 import { delay } from '@/utils';
 
 import { MEAL_CATEGORIES } from '../data';
-import { QUERY_KEYS } from './constants';
 
 export interface IMealCategoryResponse {
   id: string;
