@@ -6,6 +6,7 @@ import {
   MealButton,
   MealStory,
   MenuItem,
+  Navbar,
   Post,
   PostTags,
   RecordCategory,
@@ -25,6 +26,8 @@ import {
 function App() {
   return (
     <div className="app">
+      <Navbar />
+
       <h1 className="text-sm">
         魚を食べて頭もカラダも元気に！知っておきたい魚を食べるメリ…
       </h1>
@@ -39,9 +42,6 @@ function App() {
         <MealButton icon={<CupIcon />}>Snack</MealButton>
       </div>
 
-      <div className="mx-auto w-[60rem] flex">
-        <MenuItem to="abc" label="自分の記録" />
-      </div>
       <div className="mx-auto w-[60rem] flex">
         <MemoIcon />
         <ChallengeIcon />
