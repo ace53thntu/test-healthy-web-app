@@ -1,0 +1,4 @@
+export const QUERY_KEYS = {
+  MEAL_CATEGORIES: 'MEAL_CATEGORIES',
+  MEAL_HISTORIES: 'MEAL_HISTORIES',
+} as const;

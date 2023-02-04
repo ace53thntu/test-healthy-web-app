@@ -24,10 +24,12 @@ module.exports = {
       backgroundImage: {
         'gradient-yellowred':
           'linear-gradient(180deg, #FFCC21 0%, #FF963C 100%)',
+        'achievement-bg': 'linear-gradient(225deg, #FFCC21 0%, #FF963C 100%)',
       },
     },
     screens: {
       md: '960px',
+      lg: '1280px',
     },
   },
   plugins: [],

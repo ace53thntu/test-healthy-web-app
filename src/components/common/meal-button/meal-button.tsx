@@ -5,12 +5,12 @@ import { Button } from '@/components/base';
 
 import cssClasses from './meal-button.module.css';
 
-interface IMealButtonProps {
+export interface IMealButtonProps {
   icon: React.ReactNode;
 }
 
 const classes = {
-  root: 'flex-col font-inter font-normal text-xl leading-6',
+  root: 'flex-col font-inter font-normal text-xl leading-6 before:absolute relative',
 } as const;
 
 export const MealButton: React.FC<
@@ -19,7 +19,7 @@ export const MealButton: React.FC<
   const classesName = cn(cssClasses['meal-button'], classes.root);
 
   return (
-    <Button className={classesName}>
+    <Button className={classesName} variant="custom">
       {icon}
       {children}
     </Button>
