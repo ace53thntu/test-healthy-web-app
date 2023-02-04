@@ -4,15 +4,20 @@ type RecordCategoryProps = {
   image: React.ImgHTMLAttributes<HTMLImageElement>;
   name: string;
   caption: string;
+  onClick: () => void;
 };
 
 export const RecordCategory: React.FC<RecordCategoryProps> = ({
   image,
   name,
   caption,
+  onClick,
 }: RecordCategoryProps) => {
   return (
-    <div className="relative flex h-[288px] w-[288px] flex-col items-center justify-center">
+    <button
+      className="relative flex h-[288px] w-[288px] flex-col items-center justify-center"
+      onClick={onClick}
+    >
       <picture className="absolute z-[1] bg-black before:absolute before:top-0 before:left-0 before:right-0 before:bottom-0 before:z-[1] before:border-[24px] before:border-solid before:border-primary-300">
         <img
           src={image.src}
@@ -31,7 +36,7 @@ export const RecordCategory: React.FC<RecordCategoryProps> = ({
           </p>
         </div>
       </div>
-    </div>
+    </button>
   );
 };
 

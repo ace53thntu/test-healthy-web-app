@@ -5,7 +5,6 @@ import '@fontsource/inter';
 import '@fontsource/noto-sans-jp';
 // global css
 import './index.css';
-import '@/assets/css/circle.css';
 
 import React from 'react';
 import * as ReactDOM from 'react-dom';
