@@ -27,7 +27,7 @@ export const Post: React.FC<PostProps> = ({
         {time}
       </figure>
 
-      <h3 className="mt-[8px] text-[15px] font-light leading-[22px] tracking-[.075px]">
+      <h3 className="mt-[8px] text-[15px] font-light leading-[22px] tracking-[.075px] line-clamp-2">
         {title}
       </h3>
 
