@@ -11,13 +11,12 @@ import { Link } from './link';
 import { Menu } from './menu';
 
 const flexBetween = 'flex items-center justify-between';
-const navbarHeight = `h-[${NAVBAR_HEIGHT}px]`;
 
 export const Navbar: React.FC = () => {
   return (
-    <nav className={navbarHeight}>
+    <nav className={`h-[${NAVBAR_HEIGHT}px]`}>
       <div
-        className={`${flexBetween} fixed top-0 z-30 w-full bg-dark-500 ${navbarHeight}`}
+        className={`${flexBetween} fixed top-0 z-30 w-full bg-dark-500 h-[${NAVBAR_HEIGHT}px]`}
       >
         <div className={`${flexBetween} mx-auto w-9/12`}>
           <div className={`${flexBetween} w-full gap-16`}>
