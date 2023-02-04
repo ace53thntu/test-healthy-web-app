@@ -16,7 +16,7 @@ export interface IPostResponse {
 
 const totalPage = COLUMN_POSTS.length;
 
-const fetchPosts = async (page: number): IPostResponse[] => {
+const fetchPosts = async (page: number): Promise<IPostResponse[]> => {
   await delay(500);
 
   return fakePagination(COLUMN_POSTS, 8, page);

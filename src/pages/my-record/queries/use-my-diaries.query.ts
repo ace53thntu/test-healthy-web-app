@@ -14,7 +14,7 @@ export interface IMyDiaryResponse {
 
 const totalPage = MY_DIARIES.length;
 
-const fetchMyDiary = async (page: number): IMyDiaryResponse[] => {
+const fetchMyDiary = async (page: number): Promise<IMyDiaryResponse[]> => {
   await delay(500);
 
   return fakePagination(MY_DIARIES, 8, page);
