@@ -4,7 +4,6 @@ import { NavLink } from 'react-router-dom';
 import Logo from '@/assets/logo.svg';
 import { Badge } from '@/components/base/badge';
 import { ChallengeIcon, InfoIcon, MemoIcon } from '@/components/icons';
-import { NAVBAR_HEIGHT } from '@/configs/menu.config';
 import { ROUTE_PATHS } from '@/configs/routes.config';
 
 import { Link } from './link';
@@ -14,9 +13,9 @@ const flexBetween = 'flex items-center justify-between';
 
 export const Navbar: React.FC = () => {
   return (
-    <nav className={`h-[${NAVBAR_HEIGHT}px]`}>
+    <nav className={`h-[64px]`}>
       <div
-        className={`${flexBetween} fixed top-0 z-30 w-full bg-dark-500 h-[${NAVBAR_HEIGHT}px]`}
+        className={`${flexBetween} fixed top-0 z-30 h-[64px] w-full bg-dark-500`}
       >
         <div className={`${flexBetween} mx-auto w-9/12`}>
           <div className={`${flexBetween} w-full gap-16`}>

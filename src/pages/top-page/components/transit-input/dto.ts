@@ -3,8 +3,10 @@ import { IMealButtonProps } from '@/components/common/meal-button';
 import { IMealCategoryResponse } from '../../queries';
 import { MAP_ICONS } from './transit-input';
 
-interface ITransitInputDto extends IMealCategoryResponse {
+interface ITransitInputDto {
   icon: IMealButtonProps['icon'];
+  id: string;
+  name: string;
 }
 
 export function transitInputDto(
@@ -16,6 +18,6 @@ export function transitInputDto(
 
   return data.map(item => ({
     ...item,
-    icon: MAP_ICONS[item.icon],
+    icon: item.icon === 'knife' ? MAP_ICONS.knife : MAP_ICONS.cup,
   }));
 }

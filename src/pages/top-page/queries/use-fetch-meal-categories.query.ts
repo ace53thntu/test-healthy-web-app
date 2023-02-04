@@ -11,8 +11,8 @@ export interface IMealCategoryResponse {
   icon: string;
 }
 
-const fetchMealCategories = async (): IMealCategoryResponse[] => {
-  await delay(500);
+const fetchMealCategories = async (): Promise<IMealCategoryResponse[]> => {
+  await delay(200);
 
   return MEAL_CATEGORIES;
 };

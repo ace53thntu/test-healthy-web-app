@@ -6,7 +6,7 @@ import { Button } from '@/components/base';
 import cssClasses from './meal-button.module.css';
 
 export interface IMealButtonProps {
-  icon: React.ReactNode;
+  icon: React.ReactNode | JSX.Element;
 }
 
 const classes = {

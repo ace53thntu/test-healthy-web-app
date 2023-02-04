@@ -15,7 +15,9 @@ export interface IMealHistoryResponse {
 
 const totalPage = MEAL_HISTORIES.length;
 
-const fetchMealHistories = async (page: number): IMealHistoryResponse[] => {
+const fetchMealHistories = async (
+  page: number
+): Promise<IMealHistoryResponse[]> => {
   await delay(500);
 
   return fakePagination(MEAL_HISTORIES, 8, page);
