@@ -3,7 +3,7 @@ import * as React from 'react';
 
 export interface IButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  className: string;
+  className?: string;
   variant?: 'normal';
 }
 
