@@ -1,4 +1,5 @@
 export * from './challenge-icon';
+export * from './chervon-up-icon';
 export * from './close-icon';
 export * from './cup-icon';
 export * from './info-icon';

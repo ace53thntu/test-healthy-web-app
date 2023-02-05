@@ -1,9 +1,8 @@
 import { useInfiniteQuery } from 'react-query';
 
-import { QUERY_KEYS } from '@/configs/query-key';
-import { delay, fakePagination } from '@/utils';
-
-import { COLUMN_POSTS } from '../data';
+import { API_ENDPOINTS } from '@/configs/api-endpoints';
+import { fakePagination } from '@/utils';
+import { HttpService } from '@/utils/axios-instance';
 
 export interface IPostResponse {
   id: string;
@@ -14,24 +13,27 @@ export interface IPostResponse {
   tags: string[];
 }
 
-const totalPage = COLUMN_POSTS.length;
+const totalItems = 30;
+const limit = 8;
 
 const fetchPosts = async (page: number): Promise<IPostResponse[]> => {
-  await delay(500);
+  const { data } = await HttpService.find<IPostResponse[]>(
+    API_ENDPOINTS.COLUMN_POSTS
+  );
 
-  return fakePagination(COLUMN_POSTS, 8, page);
+  return fakePagination(data, limit, page);
 };
 
 const useFetchPosts = () => {
   return useInfiniteQuery(
-    [QUERY_KEYS.COLUMN_POSTS],
+    [API_ENDPOINTS.COLUMN_POSTS],
     async ({ pageParam = 1 }) => {
       const data = await fetchPosts(pageParam);
       return data;
     },
     {
       getNextPageParam: (lastPage, allPages) => {
-        const nextPage = Math.ceil(totalPage / 8);
+        const nextPage = Math.ceil(totalItems / limit);
         return nextPage > allPages.length ? allPages.length + 1 : false;
       },
     }

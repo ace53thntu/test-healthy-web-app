@@ -1,6 +1,7 @@
 import * as React from 'react';
 
-import { CATEGORIES } from '../../data';
+import { CATEGORIES } from '@/data';
+
 import { Category } from './category';
 
 export const ColumnCategories: React.FC = () => {

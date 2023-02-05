@@ -1,10 +1,10 @@
 import * as React from 'react';
 
 import { BodyChart, RecordHeader } from '@/components/common';
+import { BODY_RECORDS_YEAR_DATA } from '@/data';
 import { getLast12Months } from '@/utils';
 
 import { MY_RECORD_PAGE_IDS } from '../../constants';
-import { BODY_RECORDS_YEAR_DATA } from '../../data';
 import { FilterButton } from './filter-button';
 
 export const BodyFatGraph: React.FC = () => {
