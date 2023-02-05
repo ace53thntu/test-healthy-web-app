@@ -7,11 +7,6 @@ import {
   TransitInput,
 } from './components';
 
-/**
- * TODO:
- * - Achievement percentage
- */
-
 const TopPage: React.FC = () => {
   return (
     <div>
