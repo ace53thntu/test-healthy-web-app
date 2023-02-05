@@ -1,3 +1,4 @@
+export * from './body-chart';
 export * from './errors';
 export * from './footer';
 export * from './meal-button';
@@ -5,5 +6,6 @@ export * from './meal-story';
 export * from './navbar';
 export * from './post';
 export * from './record-category';
+export * from './record-header';
 export * from './scroll-top';
 export * from './time';

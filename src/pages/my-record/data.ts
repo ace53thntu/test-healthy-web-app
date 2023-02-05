@@ -13,3 +13,9 @@ export const MY_EXERCISE_DATA = Array.from({ length: 30 }).map(() => ({
   energy: '26kcal',
   time: '10 min',
 }));
+
+export const BODY_RECORDS_YEAR_DATA = Array.from({ length: 12 }).map(() => ({
+  name: '月',
+  firstLine: parseInt(faker.random.numeric(4), 10),
+  secondLine: parseInt(faker.random.numeric(4), 10),
+}));
