@@ -15,3 +15,16 @@ export const formatDiaryTime = (date: string): string => {
 export const getTodayDate = (): string => {
   return dayjs().format('YYYY.MM.DD');
 };
+
+export const getLast12Months = (): string[] => {
+  let current = dayjs();
+
+  const months = [current.format('M')];
+
+  for (let i = 0; i < 11; i++) {
+    current = current.subtract(1, 'month');
+    months.push(current.format('M'));
+  }
+
+  return months;
+};
