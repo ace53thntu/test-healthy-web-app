@@ -10,13 +10,12 @@ import {
 /**
  * TODO:
  * - Achievement percentage
- * - Body graph
  */
 
 const TopPage: React.FC = () => {
   return (
     <div>
-      <div className="mx-auto flex bg-dark-600 lg:max-w-[1280px]">
+      <div className="mx-auto flex lg:max-w-[1280px]">
         <Achievement />
         <BodyGraph />
       </div>

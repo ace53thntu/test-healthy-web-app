@@ -7,23 +7,29 @@ type BodyChartProps = {
     firstLine: number;
     secondLine: number;
   }[];
+  width: number;
+  height: number;
+  right: number;
 };
 
 const LINE_COLORS = ['#FFCC21', '#8FE9D0'];
-const LINE_STROKE_WIDTH = 4;
-const LINE_DOT_STROKE_WIDTH = 4;
+const LINE_STROKE_WIDTH = 3;
+const LINE_DOT_STROKE_WIDTH = 3;
 const CARTESIAN_GRID_COLOR = '#777777';
 const CARTESIAN_GRID_STROKE_WIDTH = 0.5;
 
 export const BodyChart: React.FC<BodyChartProps> = ({
   data,
+  width = 910,
+  height = 220,
+  right = 30,
 }: BodyChartProps) => {
   return (
     <LineChart
-      width={910}
-      height={220}
+      width={width}
+      height={height}
       data={data}
-      margin={{ right: 30, left: 30, top: 5, bottom: 5 }}
+      margin={{ right, left: 30, top: 5, bottom: 5 }}
     >
       <CartesianGrid
         horizontal={false}
@@ -77,7 +83,7 @@ export const BodyChart: React.FC<BodyChartProps> = ({
         dot={{
           strokeWidth: LINE_DOT_STROKE_WIDTH,
           stroke: LINE_COLORS[0],
-          r: 4,
+          r: LINE_DOT_STROKE_WIDTH,
           fill: LINE_COLORS[0],
         }}
       />
@@ -89,7 +95,7 @@ export const BodyChart: React.FC<BodyChartProps> = ({
         dot={{
           strokeWidth: LINE_DOT_STROKE_WIDTH,
           stroke: LINE_COLORS[1],
-          r: 4,
+          r: LINE_DOT_STROKE_WIDTH,
           fill: LINE_COLORS[1],
         }}
       />

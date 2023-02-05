@@ -17,8 +17,8 @@ export const BodyFatGraph: React.FC = () => {
     }));
   }, []);
 
-  const handleFilterClick = val => {
-    setCurrentFilter(val);
+  const handleFilterClick = (filterBy: string) => {
+    setCurrentFilter(filterBy);
   };
 
   return (
@@ -29,7 +29,7 @@ export const BodyFatGraph: React.FC = () => {
       <RecordHeader heading="Body Record" />
 
       <div className="flex items-center justify-center">
-        <BodyChart data={chartData} />
+        <BodyChart data={chartData} width={910} height={220} right={30} />
       </div>
 
       <div className="absolute bottom-[16px] left-[32px] flex gap-x-[16px]">

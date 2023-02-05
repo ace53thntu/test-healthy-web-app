@@ -5,7 +5,7 @@ import { Button } from '@/components/base';
 type FilterButton = React.PropsWithChildren<Record<string, unknown>> & {
   active?: boolean;
   filterBy: 'day' | 'week' | 'month' | 'year';
-  handleFilterClick: () => void;
+  handleFilterClick: (filterBy: string) => void;
 };
 
 export const FilterButton: React.FC<FilterButton> = ({
