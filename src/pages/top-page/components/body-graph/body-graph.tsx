@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import { BodyChart } from '@/components/common';
-import { BODY_RECORDS_YEAR_DATA } from '@/pages/my-record/data';
+import { BODY_RECORDS_YEAR_DATA } from '@/data';
 import { getLast12Months } from '@/utils';
 
 export const BodyGraph: React.FC = () => {

@@ -7,7 +7,7 @@ export const FooterItem = React.forwardRef<HTMLAnchorElement, NavLinkProps>(
       <NavLink
         ref={ref}
         {...rest}
-        className={`font-light text-[11px] leading-4 text-light tracking-[.033px] hover:text-primary-400`}
+        className={`text-[11px] font-light leading-4 tracking-[.033px] text-light`}
       >
         {children}
       </NavLink>

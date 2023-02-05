@@ -1,9 +1,9 @@
 import { useInfiniteQuery } from 'react-query';
 
-import { QUERY_KEYS } from '@/configs/query-key';
-import { delay, fakePagination } from '@/utils';
+import { API_ENDPOINTS } from '@/configs/api-endpoints';
+import { fakePagination } from '@/utils';
+import { HttpService } from '@/utils/axios-instance';
 
-import { MEAL_HISTORIES } from '../data';
 import { IMealCategoryResponse } from './use-fetch-meal-categories.query';
 
 export interface IMealHistoryResponse {
@@ -13,26 +13,29 @@ export interface IMealHistoryResponse {
   createdAt: string;
 }
 
-const totalPage = MEAL_HISTORIES.length;
+const totalItems = 30;
+const limit = 8;
 
 const fetchMealHistories = async (
   page: number
 ): Promise<IMealHistoryResponse[]> => {
-  await delay(500);
+  const { data } = await HttpService.find<IMealHistoryResponse[]>(
+    API_ENDPOINTS.MEAL_HISTORIES
+  );
 
-  return fakePagination(MEAL_HISTORIES, 8, page);
+  return fakePagination(data, limit, page);
 };
 
 const useFetchMealHistories = () => {
   return useInfiniteQuery(
-    [QUERY_KEYS.MEAL_HISTORIES],
+    [API_ENDPOINTS.MEAL_HISTORIES],
     async ({ pageParam = 1 }) => {
       const data = await fetchMealHistories(pageParam);
       return data;
     },
     {
       getNextPageParam: (lastPage, allPages) => {
-        const nextPage = Math.ceil(totalPage / 8);
+        const nextPage = Math.ceil(totalItems / limit);
         return nextPage > allPages.length ? allPages.length + 1 : false;
       },
     }

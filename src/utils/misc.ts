@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-export function randomItemInArray(items: any[]): any[] {
+export function randomItemInArray(items: any[]): any {
   return items[Math.floor(Math.random() * items.length)];
 }
 

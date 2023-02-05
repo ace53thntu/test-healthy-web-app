@@ -1,9 +1,7 @@
 import { useQuery } from 'react-query';
 
-import { QUERY_KEYS } from '@/configs/query-key';
-import { delay } from '@/utils';
-
-import { MY_EXERCISE_DATA } from '../data';
+import { API_ENDPOINTS } from '@/configs/api-endpoints';
+import { HttpService } from '@/utils/axios-instance';
 
 export interface IMyExerciseResponse {
   id: string;
@@ -13,13 +11,15 @@ export interface IMyExerciseResponse {
 }
 
 const fetchExercises = async (): Promise<IMyExerciseResponse[]> => {
-  await delay(500);
+  const { data } = await HttpService.find<IMyExerciseResponse[]>(
+    API_ENDPOINTS.MY_EXERCISES
+  );
 
-  return MY_EXERCISE_DATA;
+  return data;
 };
 
 const useFetchMyExercises = () => {
-  return useQuery([QUERY_KEYS.MY_EXERCISES], fetchExercises);
+  return useQuery([API_ENDPOINTS.MY_EXERCISES], fetchExercises);
 };
 
 export { fetchExercises, useFetchMyExercises };

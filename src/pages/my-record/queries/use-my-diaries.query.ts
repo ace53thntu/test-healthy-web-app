@@ -1,9 +1,8 @@
 import { useInfiniteQuery } from 'react-query';
 
-import { QUERY_KEYS } from '@/configs/query-key';
-import { delay, fakePagination } from '@/utils';
-
-import { MY_DIARIES } from '../data';
+import { API_ENDPOINTS } from '@/configs/api-endpoints';
+import { fakePagination } from '@/utils';
+import { HttpService } from '@/utils/axios-instance';
 
 export interface IMyDiaryResponse {
   id: string;
@@ -12,24 +11,26 @@ export interface IMyDiaryResponse {
   desc: string;
 }
 
-const totalPage = MY_DIARIES.length;
+const totalItems = 30;
+const limit = 8;
 
 const fetchMyDiary = async (page: number): Promise<IMyDiaryResponse[]> => {
-  await delay(500);
-
-  return fakePagination(MY_DIARIES, 8, page);
+  const { data } = await HttpService.find<IMyDiaryResponse[]>(
+    API_ENDPOINTS.MY_DIARIES
+  );
+  return fakePagination(data, limit, page);
 };
 
 const useFetchMyDiaries = () => {
   return useInfiniteQuery(
-    [QUERY_KEYS.MY_DIARIES],
+    [API_ENDPOINTS.MY_DIARIES],
     async ({ pageParam = 1 }) => {
       const data = await fetchMyDiary(pageParam);
       return data;
     },
     {
       getNextPageParam: (lastPage, allPages) => {
-        const nextPage = Math.ceil(totalPage / 8);
+        const nextPage = Math.ceil(totalItems / limit);
         return nextPage > allPages.length ? allPages.length + 1 : false;
       },
     }

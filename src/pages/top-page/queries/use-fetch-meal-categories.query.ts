@@ -1,9 +1,7 @@
 import { useQuery } from 'react-query';
 
-import { QUERY_KEYS } from '@/configs/query-key';
-import { delay } from '@/utils';
-
-import { MEAL_CATEGORIES } from '../data';
+import { API_ENDPOINTS } from '@/configs/api-endpoints';
+import { HttpService } from '@/utils/axios-instance';
 
 export interface IMealCategoryResponse {
   id: string;
@@ -12,13 +10,15 @@ export interface IMealCategoryResponse {
 }
 
 const fetchMealCategories = async (): Promise<IMealCategoryResponse[]> => {
-  await delay(200);
+  const { data } = await HttpService.find<IMealCategoryResponse[]>(
+    API_ENDPOINTS.MEAL_CATEGORIES
+  );
 
-  return MEAL_CATEGORIES;
+  return data;
 };
 
 const useFetchMealCategories = () => {
-  return useQuery([QUERY_KEYS.MEAL_CATEGORIES], fetchMealCategories);
+  return useQuery([API_ENDPOINTS.MEAL_CATEGORIES], fetchMealCategories);
 };
 
 export { fetchMealCategories, useFetchMealCategories };
